@@ -27,7 +27,7 @@
         <members>Coupon__c</members>
         <members>Order</members>
         <members>OrderItem</members>     
-        <members>Product__c</members>
+        <members>Product2</members>
         <name>CustomObject</name>
     </types>
     <types>
