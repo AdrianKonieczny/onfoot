@@ -21,8 +21,12 @@
         <name>ApexTrigger</name>
     </types>
     <types>
-        <members>Account</members>
+        <members>Account</members>  
+        <members>Account_Coupon__c</members>  
         <members>Contact</members>
+        <members>Order</members>
+        <members>OrderItem</members>
+        <members>Coupon__c</members>
         <name>CustomObject</name>
     </types>
     <types>
