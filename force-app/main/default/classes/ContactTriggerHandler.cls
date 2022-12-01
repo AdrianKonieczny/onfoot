@@ -12,30 +12,18 @@ public with sharing class ContactTriggerHandler extends TriggerHandler {
     }
 
 
-    private void countContactsConnectedToAccount(){       
-        List<Contact> contactList = new List<Contact>();
-        List<Account> accountList = new List<Account>();  
-        List<Id> accIDs = new List<Id>();     
-
-        if(Trigger.isInsert){
-            for(Contact ct : newContacts){      
-                accIDs.add(ct.AccountId);              
-            }
-        }         
-        
-        if(Trigger.isDelete){
-            for(Contact ct : deletedContacts){
-                accIDs.add(ct.AccountId); 
-            }          
+    private void countContactsConnectedToAccount(){                      
+        List<Id> accIDs = new List<Id>();            
+        List<Contact> tempContacts = Trigger.isDelete ? deletedContacts : newContacts;
+             
+        for(Contact ct : tempContacts){
+            accIDs.add(ct.AccountId); 
+        }              
+       
+        List<Account> accounts = AccountSelector.getAccountsByIDs(accIDs);        
+        for(Account acc : accounts){
+            acc.Contact_Count__c = acc.Contacts.size();
         }
-
-        if(accIDs.size() > 0){
-            contactList = ContactSelector.getContactsByAccountIDs(accIDs);
-            accountList = AccountSelector.getAccountsByIDs(accIDs);
-        }
-        for(Account acc : accountList){
-            acc.Contact_Count__c = contactList.size();
-        }
-        update accountList;
+        update accounts;
     }
 }
