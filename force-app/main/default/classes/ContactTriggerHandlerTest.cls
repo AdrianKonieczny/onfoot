@@ -17,4 +17,19 @@ private class ContactTriggerHandlerTest {
         List<Account> updatedAccs = TestSelector.getAccountsByPositiveContactCount();
         System.assertNotEquals(accs.size(), updatedAccs.size(), 'testAccount contact count should not be equal to acc contact count.');        
     }
+    @IsTest 
+    private static void shouldNotCountContactsConnectedToAccount(){
+        Account testAccount = new Account(Name = 'TestAccount');
+        Contact testContact = new Contact(LastName = 'Test');
+        List<Account> accs = TestSelector.getAccountsByPositiveContactCount();
+        insert testAccount;
+        
+        Test.startTest();
+        insert testContact;
+        Test.StopTest();
+        
+        List<Account> updatedAccs = TestSelector.getAccountsByPositiveContactCount();
+        System.assertEquals(accs.size(), updatedAccs.size(), 'testAccount Contact Count should remain the same.');
+
+    }
 }
