@@ -8,8 +8,11 @@ public without sharing class CreateAccountCouponsJob implements Database.Batchab
     public void execute(Database.BatchableContext context, List<Account> scope) {
         List<Product2> newProducts = ProductSelector.getProductsByCouponCreated(false);
         List<Account_Coupon__c> accCouponsToInsert = new List<Account_Coupon__c>();
-        for(Account acc : scope){          
-            for(Product2 prod : newProducts){
+        for(Account acc : scope){
+            if(!couponByName.containsKey(acc.Customer_Status__c)){
+                continue;
+            }          
+            for(Product2 prod : newProducts){               
                Account_Coupon__c accCoupon = new Account_Coupon__c(Account__c = acc.Id, Coupon__c = couponByName.get(acc.Customer_Status__c).Id, Product__c = prod.Id);
                accCouponsToInsert.add(accCoupon);
                prod.Coupon_Created__c = true;
