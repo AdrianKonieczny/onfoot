@@ -1,4 +1,4 @@
-public with sharing class Constants {
+public class Constants {
     
     //Account
     public static final String CUSTOMER_STATUS_GOLD = 'Gold';
