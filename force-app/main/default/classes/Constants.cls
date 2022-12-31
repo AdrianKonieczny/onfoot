@@ -1,6 +1,6 @@
 public with sharing class Constants {
     
-    //Account Customer Status
+    //Account
     public static final String CUSTOMER_STATUS_GOLD = 'Gold';
     public static final String CUSTOMER_STATUS_SILVER = 'Silver';
     public static final String CUSTOMER_STATUS_BRONZE = 'Bronze';
