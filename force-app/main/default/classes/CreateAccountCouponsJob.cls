@@ -1,5 +1,5 @@
 public without sharing class CreateAccountCouponsJob implements Database.Batchable<sObject>, Schedulable{
-    private Map<String, Coupon__c> couponByName = CouponService.getCouponByName();    
+    private Map<String, Coupon__c> couponByName = CouponService.getCouponByName(true);    
 
     public Database.QueryLocator start(Database.BatchableContext context) {       
         return Database.getQueryLocator([SELECT Id, Customer_Status__c FROM Account WHERE Customer_Status__c != null]);
