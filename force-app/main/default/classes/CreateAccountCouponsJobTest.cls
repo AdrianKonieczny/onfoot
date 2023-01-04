@@ -1,8 +1,8 @@
 @IsTest
 public with sharing class CreateAccountCouponsJobTest {
     
-    private static String prodName = 'tstProd';
-    private static String accName = 'tstAcc';
+    public static final String prodName = 'tstProd';
+    public static final String accName = 'tstAcc';
 
     @TestSetup
     static void setup(){    
