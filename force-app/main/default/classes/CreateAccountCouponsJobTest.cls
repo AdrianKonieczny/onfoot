@@ -6,7 +6,7 @@ public with sharing class CreateAccountCouponsJobTest {
 
     @TestSetup
     static void setup(){    
-        Product2 testProduct = new Product2(Name = prodName, Category__c = Constants.PRODUCT2_CATEGORY_CASUAL , Construction__c = Constants.PRODUCT2_CONSTRUCTION_LOW, Material__c = Constants.PRODUCT2_MATERIAL_LEATHER, Price__c = 100, Picture_URL__c = 'xd.pl');        
+        Product2 testProduct = new Product2(Name = prodName, Category__c = Constants.PRODUCT_CATEGORY_CASUAL , Construction__c = Constants.PRODUCT_CONSTRUCTION_LOW, Material__c = Constants.PRODUCT_MATERIAL_LEATHER, Price__c = 100, Picture_URL__c = 'xd.pl');        
         Account testAccount = new Account(Name = accName, Customer_Status__c = Constants.CUSTOMER_STATUS_SILVER);        
         Coupon__c testCoupon = new Coupon__c(Name = Constants.CUSTOMER_STATUS_SILVER, Value__c = 10, Start_Date__c = Datetime.Now(), End_Date__c = Datetime.Now().addYears(1));    
         Map<Id, Account> accIds = new Map<Id,Account>();
