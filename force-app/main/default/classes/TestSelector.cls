@@ -1,5 +1,10 @@
 public inherited sharing class TestSelector {  
-    public static List<Account_Coupon__c> getAccountCoupons(List<Id> accountIds){
-        return [SELECT Id FROM Account_Coupon__c WHERE Account__c IN :accountIds];
+
+    public static Account getAccount(){
+        return [SELECT Id, Customer_Status__c FROM Account LIMIT 1];
+    }
+    
+    public static Product2 getProduct(){
+        return [SELECT Id FROM Product2 LIMIT 1];  
     }
 }
