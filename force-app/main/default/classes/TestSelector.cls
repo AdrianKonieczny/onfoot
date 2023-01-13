@@ -12,4 +12,11 @@ public inherited sharing class TestSelector {
         return [SELECT Id FROM Contact];
     }
 
+    public static List<Case> getCases(){
+        return [SELECT Id FROM Case];
+    }
+
+    public static Case getCaseBySecurityCode(List<String> SecurityCode){
+        return [SELECT Id, Security_Code__c FROM Case WHERE Security_Code__c = :SecurityCode LIMIT 1];
+    }
 }

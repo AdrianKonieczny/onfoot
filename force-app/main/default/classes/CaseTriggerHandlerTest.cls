@@ -9,20 +9,20 @@ public with sharing class CaseTriggerHandlerTest {
     @IsTest
     private static void shouldCreateCase(){
         Case testCase = new Case(Status = Constants.STATUS_NEW, Origin = Constants.ORIGIN_PHONE, Security_Code__c = Constants.SECURITY_CODE_NV);
-        List<Case> cases = [SELECT Id FROM Case];
+        List<Case> cases = TestSelector.getCases();
 
         Test.startTest();
         insert testCase;
         Test.stopTest();
 
-        List<Case> updatedCases = [SELECT Id FROM Case];      
+        List<Case> updatedCases = TestSelector.getCases();      
         System.assertEquals(cases.size()+1, updatedCases.size(), 'case should be created');
     }
 
     @IsTest
     private static void shouldNotCreateCase(){
         Case testCase = new Case(Status = Constants.STATUS_NEW, Origin = Constants.ORIGIN_PHONE, Security_Code__c = 'X455');
-        List<Case> cases = [SELECT Id FROM Case];
+        List<Case> cases = TestSelector.getCases();
 
         Test.startTest();
         try{                                   
@@ -33,14 +33,15 @@ public with sharing class CaseTriggerHandlerTest {
         }
         Test.stopTest();
 
-        List<Case> updatedCases = [SELECT Id FROM Case];
+        List<Case> updatedCases = TestSelector.getCases();
         System.assertEquals(cases.size(), updatedCases.size(), 'case should not be created, wrong security code');
     }
 
     @IsTest
     private static void shouldUpdateCase(){              
-        Case testCase = [SELECT Id, Security_Code__c FROM Case WHERE Security_Code__c = :Constants.SECURITY_CODE_NY LIMIT 1];
-        Case testCaseSecond = [SELECT Id, Security_Code__c FROM Case WHERE Security_Code__c = :Constants.SECURITY_CODE_CA LIMIT 1];
+        //Case testCase = [SELECT Id, Security_Code__c FROM Case WHERE Security_Code__c = :Constants.SECURITY_CODE_NY LIMIT 1];
+        Case testCase = TestSelector.getCaseBySecurityCode(new List<String>{Constants.SECURITY_CODE_NY});
+        Case testCaseSecond = TestSelector.getCaseBySecurityCode(new List<String>{Constants.SECURITY_CODE_CA});
         
         testCase.Security_Code__c = Constants.SECURITY_CODE_CA;
 
