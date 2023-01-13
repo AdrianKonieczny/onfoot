@@ -2,16 +2,12 @@
 public with sharing class CreateAccountCouponsJobTest {
     
     public static final String PROD_NAME = 'tstProd';
-    public static final String ACC_NAME = 'tstAcc';
 
     @TestSetup
     static void setup(){    
-        Product2 testProduct = new Product2(Name = PROD_NAME, Category__c = Constants.PRODUCT_CATEGORY_CASUAL , Construction__c = Constants.PRODUCT_CONSTRUCTION_LOW, Material__c = Constants.PRODUCT_MATERIAL_LEATHER, Price__c = 100, Picture_URL__c = 'xd.pl');        
-        Account testAccount = new Account(Name = ACC_NAME, Customer_Status__c = Constants.CUSTOMER_STATUS_SILVER);        
-        Coupon__c testCoupon = new Coupon__c(Name = Constants.CUSTOMER_STATUS_SILVER, Value__c = 10, Start_Date__c = Datetime.Now(), End_Date__c = Datetime.Now().addYears(1));            
-        insert testAccount;
-        insert testCoupon;  
-        insert testProduct;     
+        Product2 testProd = (Product2)TestFactory.createSObject(new Product2(), TestFactoryDefaults.ProductDefaults.class.toString(), true);        
+        Account testAccount = (Account)TestFactory.createSObject(new Account(Customer_Status__c = Constants.CUSTOMER_STATUS_SILVER), TestFactoryDefaults.AccountDefaults.class.toString(), true);        
+        Coupon__c testCoupon = (Coupon__c)TestFactory.createSObject(new Coupon__c(), TestFactoryDefaults.CouponDefaults.class.toString(), true);                     
     }            
 
     @IsTest
