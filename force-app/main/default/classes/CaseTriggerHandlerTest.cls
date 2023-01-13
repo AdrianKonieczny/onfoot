@@ -3,11 +3,12 @@ public with sharing class CaseTriggerHandlerTest {
     
     @TestSetup
     static void makeData(){
-        Case tstCase = (Case)TestFactory.createSObject(new Case(Status = 'New', Origin = 'Phone', Security_Code__c = 'X433'), TestFactoryDefaults.CaseDefaults.class.toString(), true);
-    }
+        Case tstCase = (Case)TestFactory.createSObject(new Case(Status = Constants.STATUS_NEW, Origin = Constants.ORIGIN_PHONE, Security_Code__c = Constants.SECURITY_CODE_NY), TestFactoryDefaults.CaseDefaults.class.toString(), true);
+        Case tstCaseSecond = (Case)TestFactory.createSObject(new Case(Status = Constants.STATUS_NEW, Origin = Constants.ORIGIN_PHONE, Security_Code__c = Constants.SECURITY_CODE_CA), TestFactoryDefaults.CaseDefaults.class.toString(), true);
+    }   
     @IsTest
     private static void shouldCreateCase(){
-        Case testCase = new Case(Status = 'New', Origin = 'Phone', Security_Code__c = 'X442');
+        Case testCase = new Case(Status = Constants.STATUS_NEW, Origin = Constants.ORIGIN_PHONE, Security_Code__c = Constants.SECURITY_CODE_NV);
         List<Case> cases = [SELECT Id FROM Case];
 
         Test.startTest();
@@ -20,7 +21,7 @@ public with sharing class CaseTriggerHandlerTest {
 
     @IsTest
     private static void shouldNotCreateCase(){
-        Case testCase = new Case(Status = 'New', Origin = 'Phone', Security_Code__c = 'X455');
+        Case testCase = new Case(Status = Constants.STATUS_NEW, Origin = Constants.ORIGIN_PHONE, Security_Code__c = 'X455');
         List<Case> cases = [SELECT Id FROM Case];
 
         Test.startTest();
@@ -37,17 +38,16 @@ public with sharing class CaseTriggerHandlerTest {
     }
 
     @IsTest
-    private static void shouldUpdateCreateCase(){       
-        Case testCase = new Case(Status = 'New', Origin = 'Phone', Security_Code__c = 'X433');
-        insert testCase;
-       
-        testCase.Security_Code__c = 'X442';
+    private static void shouldUpdateCase(){              
+        Case testCase = [SELECT Id, Security_Code__c FROM Case WHERE Security_Code__c = :Constants.SECURITY_CODE_NY LIMIT 1];
+        Case testCaseSecond = [SELECT Id, Security_Code__c FROM Case WHERE Security_Code__c = :Constants.SECURITY_CODE_CA LIMIT 1];
+        
+        testCase.Security_Code__c = Constants.SECURITY_CODE_CA;
 
         Test.startTest();
         update testCase;
         Test.stopTest();
-
-        Case updatedCase = [SELECT Id, Security_Code__c FROM Case LIMIT 1];
-        System.assertNotEquals(testCase.Security_Code__c, updatedCase.Security_Code__c, 'tst case should be updated');
+        
+        System.assertEquals(testCase.Security_Code__c, testCaseSecond.Security_Code__c, 'tst case should be updated');
     }
 }
