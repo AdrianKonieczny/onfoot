@@ -34,8 +34,9 @@ public with sharing class CaseTriggerHandlerTest {
 
     @IsTest
     private static void shouldUpdateCase(){              
+
         Case testCase = (Case)TestFactory.createSObject(new Case(Security_Code__c = CODE_MAPPINGS.values().get(0).DeveloperName), TestFactoryDefaults.CaseDefaults.class.toString(), true);      
-        testCase.Security_Code__c = CODE_MAPPINGS.values().get(1).DeveloperName;
+        testCase.Security_Code__c = CODE_MAPPINGS.values().get(1).DeveloperName;       
 
         Test.startTest();
         update testCase;
