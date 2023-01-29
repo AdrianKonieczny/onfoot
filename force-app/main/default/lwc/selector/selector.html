@@ -1,0 +1,18 @@
+<template>
+    <div class="wrapper">
+        <header class="header">Available products</header>
+        <section class="content">
+            <div class="columns">
+                <main class="main">
+                    <c-list ontileclick={handleProductSelected}></c-list>
+                </main>
+                <aside class="sidebar-second">
+                    <c-detail if:true={selectedProduct} product={selectedProduct}></c-detail>
+                    <div class="selectproduct">
+                    <template if:false={selectedProduct}>Select a shoe.</template>
+                </div>
+                </aside>
+            </div>
+        </section>
+    </div>
+</template>

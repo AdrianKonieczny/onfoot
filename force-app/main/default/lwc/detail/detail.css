@@ -1,0 +1,20 @@
+ebody{
+  margin: 0;
+} 
+
+.name{
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.price{
+  font-size: 20px;
+  font-weight:bold;
+  color: black;
+}
+
+.description{
+  width: 75%;
+  text-align: justify;
+  font-size: 16px;
+}
