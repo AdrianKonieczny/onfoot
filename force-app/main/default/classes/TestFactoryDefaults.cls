@@ -46,4 +46,16 @@ public  class TestFactoryDefaults{
             };
         }
     }
+
+    public class Product2Defaults implements TestFactory.FieldDefaults {
+        public Map<Schema.SObjectField, Object> getFieldDefaults() {
+            return new Map<Schema.SObjectField, Object> {
+                    Product2.Name => 'Test Product',
+                    Product2.Category__c => 'Casual',
+                    Product2.Material__c => 'Leather',
+                    Product2.Construction__c => 'Low',
+                    Product2.Picture_URL__c => 'xd.pl'
+            };
+        }
+    }
 }
