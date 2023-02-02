@@ -6,30 +6,34 @@ public with sharing class CaseTriggerHandlerTest {
     @IsTest
     private static void shouldCreateCase(){             
         Case testCase = (Case)TestFactory.createSObject(new Case(Security_Code__c = CODE_MAPPINGS.values().get(0).DeveloperName), TestFactoryDefaults.CaseDefaults.class.toString(), false);
-        List<Case> cases = TestSelector.getCases();
-
+        
         Test.startTest();
         insert testCase;
         Test.stopTest();
 
-        List<Case> updatedCases = TestSelector.getCases();      
-        System.assertEquals(cases.size()+1, updatedCases.size(), 'case should be created');
+        Case updatedCase = TestSelector.getCases().get(0);
+    
+        System.assertNotEquals(testCase.Id, null, 'case should be created');
+        System.assertEquals(updatedCase.State__c, CODE_MAPPINGS.values().get(0).State__c, 'State should be updated');
     }
 
     @IsTest
     private static void shouldNotCreateCase(){
-        Case testCase = (Case)TestFactory.createSObject(new Case(Security_Code__c = 'X455'), TestFactoryDefaults.CaseDefaults.class.toString(), false);
+        String wrongCode = 'incorrect';
+        Case testCase = (Case)TestFactory.createSObject(new Case(Security_Code__c = wrongCode), TestFactoryDefaults.CaseDefaults.class.toString(), false);
+        String exMessage; 
 
         Test.startTest();
         try{                                   
             insert testCase; 
         }
         catch(Exception ex){
-            ex.getMessage();      
+            exMessage = ex.getMessage();    
         }
         Test.stopTest();
 
         System.assertEquals(testCase.Id, null, 'case should not be created, wrong security code');
+        System.assert(exMessage.contains(CaseTriggerHandler.SECURITY_CODE_ERROR_MESSAGE), 'Correct message should be displayed');
     }
 
     @IsTest

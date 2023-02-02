@@ -1,23 +1,11 @@
-public inherited sharing class TestSelector {
-    
-    public static List<Account> getAccountsContactCount(){
-        return [SELECT Id, Contact_Count__c FROM Account];
-    }
-
-    public static List<Account> getAccountsByPositiveContactCount(){
-        return [SELECT Id, Contact_Count__c FROM Account WHERE Contact_Count__c > 0];
-    }
+public inherited sharing class TestSelector {   
 
     public static List<Contact> getContacts(){
         return [SELECT Id FROM Contact];
     }
 
     public static List<Case> getCases(){
-        return [SELECT Id FROM Case];
-    }
-
-    public static Case getCaseBySecurityCode(List<String> SecurityCode){
-        return [SELECT Id, Security_Code__c FROM Case WHERE Security_Code__c = :SecurityCode LIMIT 1];
+        return [SELECT Id, State__c FROM Case];
     }
 
     public static Account getAccountContactCountByName(String accName){
