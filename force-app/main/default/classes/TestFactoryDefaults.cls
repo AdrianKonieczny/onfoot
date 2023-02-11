@@ -65,7 +65,6 @@ public  class TestFactoryDefaults{
                     Product2.Construction__c => 'High',
                     Product2.Material__c => 'Leather',
                     Product2.Category__c => 'Casual',
-                    Product2.Price__c => 100,
                     Product2.Picture_URL__c => 'tst.com'
             };
         }
