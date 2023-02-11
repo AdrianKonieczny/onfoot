@@ -1,5 +1,10 @@
 public inherited sharing class AccountSelector {
     
+    /**
+     * @description - retrieves accounts
+     * @param accIDs - Account Ids
+     * @return - List<Account>()
+     */
     public static List<Account> getAccountsByIDs(List<Id> accIDs){
         if(accIDs == null || accIDs.isEmpty()){
             return new List<Account>();

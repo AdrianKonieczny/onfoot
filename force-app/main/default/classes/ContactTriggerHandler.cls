@@ -11,6 +11,10 @@ public with sharing class ContactTriggerHandler extends TriggerHandler {
         countContactsConnectedToAccount();
     }
 
+    public override void afterUpdate(){
+        countContactsConnectedToAccount();
+    }
+
 
     private void countContactsConnectedToAccount(){                      
         List<Id> accIDs = new List<Id>();            
@@ -25,5 +29,5 @@ public with sharing class ContactTriggerHandler extends TriggerHandler {
             acc.Contact_Count__c = acc.Contacts.size();
         }
         update accounts;
-    }
+    }  
 }
