@@ -1,21 +1,19 @@
 # ON FOOT - Sales Application
-
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+Sales platform for employees.
 
 ## General info
-The reason for creating this project is to show my skills in each scope of knowledge: Apex, Triggers, Batch, LWC and Flows.
+The reason for creating this project is to show my skills in each scope of knowledge: Apex, Triggers, Batch, LWC, Custom Metadata and Flows.
 
-## How Do You Plan to Deploy Your Changes?
+## Screenshot
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+## Database diagram
 
-## Configure Your Salesforce DX Project
+## Funcionalities
+- Clickable preview of all available ON FOOT Products. After choosing a Product the component displays its Name, PriceBook, Description, Categories and Picture. (Lightning Web Component)
+- Automatically assigns an appropriate Coupon to an Account which Customer Status is set to "Silver" or "Gold" while a new Product is inserted. ***Tools used: Junction Object, Test Factory.*** (Batch)
+- Automatically checks "Security Code" field while creating a Case. If the Security Code exists, the field "State" on Case is being filled with the appropriate value (assigned to Security Code) and if it does not exist, an error popps out. ***Tools used: Custom Metadata, Trigger Handler, Test Factory.*** (Trigger and Custom Metadata)
+- Automatically counts Contacts assigned to Account and writes the number in "Contact Count" field. ***Tools used: Trigger Handler, Test Factory.*** (Trigger)
+- Automatically creates a Meeting after selecting "Requires Meeting" checkbox on Contact. Meeting date is set to 7 days after this action. ***Tools used: Formula, Flow Builder.*** (Flow Trigger)
+- Possibility to create in a fast way a new product or case straight from home page of ON FOOT. ***Tools used: Flow Builder.*** (Screen Flows)
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
 
-## Read All About It
-
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
