@@ -7,6 +7,7 @@ The reason for creating this project is to show my skills in each scope of knowl
 ## Table of contents
 - [General info](#general-info)
 - [Screenshot](#screenshot)
+- [Database Diagram](#database-diagram)
 - [Funcionalities](#funcionalities)
 - [Contact](#contact)
 
