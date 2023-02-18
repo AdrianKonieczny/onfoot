@@ -1,5 +1,5 @@
 # ON FOOT - Sales Application
-Sales platform for employees.
+Sales platform.
 
 ## General info
 The reason for creating this project is to show my skills in each scope of knowledge: Apex, Triggers, Batch, LWC, Custom Metadata and Flows.
