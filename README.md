@@ -16,4 +16,6 @@ The reason for creating this project is to show my skills in each scope of knowl
 - Automatically creates a Meeting after selecting "Requires Meeting" checkbox on Contact. Meeting date is set to 7 days after this action. ***Tools used: Formula, Flow Builder.*** (Flow Trigger)
 - Possibility to create in a fast way a new product or case straight from home page of ON FOOT. ***Tools used: Flow Builder.*** (Screen Flows)
 
-
+## Contact
+- Check out my profile on: [Trailblazer.me](https://trailblazer.me/id/akonieczny4), [LinkedIn](https://www.linkedin.com/in/adrian-konieczny-296b11265/)
+- Email: adriankon@outlook.com
