@@ -4,6 +4,12 @@ Sales platform.
 ## General info
 The reason for creating this project is to show my skills in each scope of knowledge: Apex, Triggers, Batch, LWC, Custom Metadata and Flows.
 
+## Table of contents
+- [General info](#general-info)
+- [Screenshot](#screenshot)
+- [Funcionalities](#funcionalities)
+- [Contact](#contact)
+
 ## Screenshot
 ![screenonfoot](https://user-images.githubusercontent.com/117930022/219877893-5da6425a-068c-4f97-abcf-df27f8a9b313.png)
 ## Database diagram
