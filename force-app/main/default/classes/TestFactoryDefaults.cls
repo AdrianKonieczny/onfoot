@@ -47,6 +47,17 @@ public  class TestFactoryDefaults{
         }
     }
 
+    public class CouponDefaults implements TestFactory.FieldDefaults {
+        public Map<Schema.SObjectField, Object> getFieldDefaults() {
+            return new Map<Schema.SObjectField, Object> {
+                    Coupon__c.Name => Constants.CUSTOMER_STATUS_SILVER, 
+                    Coupon__c.Value__c => 10,
+                    Coupon__c.Start_Date__c => Datetime.Now(),
+                    Coupon__c.End_Date__c => Datetime.Now().addYears(1)                    
+            };
+        }
+    }
+
     public class Product2Defaults implements TestFactory.FieldDefaults {
         public Map<Schema.SObjectField, Object> getFieldDefaults() {
             return new Map<Schema.SObjectField, Object> {
