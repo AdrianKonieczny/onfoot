@@ -1,6 +1,6 @@
 <template>
     <div class="wrapper">
-        <header class="header">{availableProducts}</header>
+        <header class="header">{labels.availableProducts}</header>
         <section class="content">
             <div class="columns">
                 <main class="main">
@@ -9,7 +9,7 @@
                 <aside class="sidebar-second">
                     <c-detail if:true={selectedProduct} product={selectedProduct}></c-detail>
                     <div class="selectproduct">
-                    <template if:false={selectedProduct}>{selectShoe}</template>
+                    <template if:false={selectedProduct}>{labels.selectShoe}</template>
                 </div>
                 </aside>
             </div>

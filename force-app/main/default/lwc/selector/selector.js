@@ -4,8 +4,13 @@ import Select_a_shoe from '@salesforce/label/c.Select_a_shoe';
 
 export default class Selector extends LightningElement {
     selectedProduct;
-    availableProducts = Available_Products;
-    selectShoe = Select_a_shoe;
+    
+     labels = {
+            availableProducts: Available_Products,
+            selectShoe: Select_a_shoe
+        }
+    
+    
     
 
     handleProductSelected(evt) {
