@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Available_Products</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Available Products</shortDescription>
+        <value>Available products</value>
+    </labels>
+    <labels>
+        <fullName>Select_a_shoe</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Select a shoe</shortDescription>
+        <value>Select a shoe</value>
+    </labels>
+</CustomLabels>
