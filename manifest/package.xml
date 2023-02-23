@@ -28,6 +28,7 @@
         <members>Order</members>
         <members>OrderItem</members>     
         <members>Product2</members>
+        <members>Security_Code_Mapping__mdt</members>
         <name>CustomObject</name>
     </types>
     <types>
@@ -37,6 +38,14 @@
     <types>
         <members>*</members>
         <name>Flow</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomMetadata</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomLabel</name>
     </types>
     <types>
         <members>*</members>
