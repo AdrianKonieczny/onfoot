@@ -3,8 +3,8 @@ public with sharing class ProductControllerTest {
     
     @IsTest
     private static void shouldGetProducts(){       
-        
         List<Product2> testProducts = TestFactory.createSObjectList(new Product2(), 5, TestFactoryDefaults.Product2Defaults.class.toString(), true);
+        
         Test.startTest();
         List<Product2> retrieveProducts = ProductController.getProducts();
         Test.stopTest();
