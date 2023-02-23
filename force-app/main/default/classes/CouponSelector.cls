@@ -1,7 +1,7 @@
 public inherited sharing class CouponSelector {
     
     /**
-     * @description - retrieves active coupons
+     * @description - retrieves coupons
      * @param isActive - Boolean isActive
      * @return - List<Coupon__c>()
      */
