@@ -13,7 +13,6 @@ public inherited sharing class ProductSelector {
 
     /**
      * @description - retrieves product
-     * @param - no param
      * @return - List<Product2>()
      */
     public static List<Product2> getProducts(){
