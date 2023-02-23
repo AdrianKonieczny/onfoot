@@ -21,3 +21,5 @@ public inherited sharing class AccountSelector {
         return [SELECT Id FROM Account_Coupon__c WHERE Account__c IN :accountIds];
     }
 }
+
+

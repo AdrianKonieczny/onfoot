@@ -58,15 +58,14 @@ public  class TestFactoryDefaults{
         }
     }
 
-    public class ProductDefaults implements TestFactory.FieldDefaults {
+    public class Product2Defaults implements TestFactory.FieldDefaults {
         public Map<Schema.SObjectField, Object> getFieldDefaults() {
             return new Map<Schema.SObjectField, Object> {
-                    Product2.Name => 'test product', 
-                    Product2.Construction__c => 'High',
-                    Product2.Material__c => 'Leather',
+                    Product2.Name => 'Test Product',
                     Product2.Category__c => 'Casual',
-                    Product2.Price__c => 100,
-                    Product2.Picture_URL__c => 'tst.com'
+                    Product2.Material__c => 'Leather',
+                    Product2.Construction__c => 'Low',
+                    Product2.Picture_URL__c => 'xd.pl'
             };
         }
     }

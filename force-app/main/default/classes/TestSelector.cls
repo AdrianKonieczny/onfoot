@@ -1,5 +1,5 @@
 public inherited sharing class TestSelector {   
-
+    
     public static List<Contact> getContacts(){
         return [SELECT Id FROM Contact];
     }
