@@ -16,7 +16,7 @@ The reason for creating this project is to show my skills in each scope of knowl
 ![gigigif_AdobeExpress_AdobeExpress](https://user-images.githubusercontent.com/117930022/221020748-b2255c42-9659-4931-94e7-8352a63f96cf.gif)
 
 ## Database diagram
-
+![databasediagram](https://user-images.githubusercontent.com/117930022/221029672-8048f337-1647-4e46-b45a-b154eaca5446.png)
 
 ## Funcionalities
 - Clickable preview of all available ON FOOT Products. After choosing a Product the component displays its Name, PriceBook, Description, Categories and Picture. (Lightning Web Component)
