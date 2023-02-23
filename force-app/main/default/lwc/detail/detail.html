@@ -1,0 +1,17 @@
+<template>
+    <div class="container">
+        <div class="name">{product.Name}</div>
+        <div class="price">
+            <template for:each={product.PricebookEntries} for:item="PricebookEntry">
+                <p key={PricebookEntry.Id}>{PricebookEntry.Pricebook2.Name} : {PricebookEntry.UnitPrice}</p>
+            </template>
+        </div>
+        <div class="description">{product.Description}</div>
+        <img class="product-img" src={product.Picture_URL__c}></img>
+        <p>
+            <lightning-badge label={product.Material__c}></lightning-badge>
+            <lightning-badge label={product.Construction__c}></lightning-badge>
+            <lightning-badge label={product.Category__c}></lightning-badge>
+        </p>
+    </div>
+</template>
