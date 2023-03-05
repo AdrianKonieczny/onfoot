@@ -20,16 +20,16 @@ The reason for creating this project is to show my skills in each scope of knowl
 
 ## Funcionalities
 - Clickable preview of all available ON FOOT Products. After choosing a Product the component displays its Name, PriceBook, Description, Categories and Picture. (Lightning Web Component)
-- Automatically assigns an appropriate Coupon to an Account which Customer Status is set to "Silver" or "Gold" while a new Product is inserted. ${\color{green}Tools\  used: Junction\ Object,\ Test\ Factory,\ Batch}$
-- Automatically checks "Security Code" field while creating a Case. If the Security Code exists, the field "State" on Case is being filled with the appropriate value (assigned to Security Code) and if it does not exist, an error popps out. ${\color{green}Tools\ used: Custom\ Metadata,\ Trigger\ Handler,\ Test\ Factory,\ Trigger}$ 
-- Automatically counts Contacts assigned to Account and writes the number in "Contact Count" field. ${\color{green}Tools\ used:\ Trigger\ Handler,\ Test\ Factory,\ Trigger}$
-- Automatically creates a Meeting after selecting "Requires Meeting" checkbox on Contact. Meeting date is set to 7 days after this action. ${\color{green}Tools\ used:\ Formula,\ Flow\ Builder,\ Flow\ Trigger}$
-- Possibility to create in a fast way a new product or case straight from home page of ON FOOT app. ${\color{green}Tools\ used:\ Flow\ Builder,\ Screen\ Flow}$
+- Automatically assigns an appropriate Coupon to an Account which Customer Status is set to "Silver" or "Gold" while a new Product is inserted. ***Tools used: Junction Object, Test Factory, Batch***
+- Automatically checks "Security Code" field while creating a Case. If the Security Code exists, the field "State" on Case is being filled with the appropriate value (assigned to Security Code) and if it does not exist, an error popps out. ***Tools used: Custom Metadata, Trigger Handler, TestFactory, Trigger***
+- Automatically counts Contacts assigned to Account and writes the number in "Contact Count" field. ***Tools used: TriggerHandler, TestFactory, Trigger***
+- Automatically creates a Meeting after selecting "Requires Meeting" checkbox on Contact. Meeting date is set to 7 days after this action. ***Tools used: Formula, Flow Builder, Flow Trigger***
+- Possibility to create in a fast way a new product or case straight from home page of ON FOOT app. ***Tools used: Flow Builder, Screen Flow***
 - Profiles: System Administrator (able to see every record and field), Junior System Administrator (cannot see contacts phone numbers) 
 
 ## Contact
 - Check out my profile on: [Trailblazer.me](https://trailblazer.me/id/akonieczny4), [LinkedIn](https://www.linkedin.com/in/adrian-konieczny-296b11265/)
 - Email: adriankon@outlook.com
 
-${\color{green}}$
+
 
